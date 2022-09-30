@@ -21,3 +21,8 @@
 * 我已经测试了数据库连接, 是OK的:
 
   ![image-20220930230242925](./assets/数据库连接成功.png)
+
+# Frontend
+
+* 仅存的问题是: Jenkins服务器太垃圾了, 每次cicd都会在npm build那里卡上两小时. 由于jenkins和前端项目都部署在jenkins的宿主机, 所以宿主机卡死会导致jenkins和前端都不能访问....
+  * 所以千万不要随意push到master, 可以push到别的分支. 等到发布的那个版本再push到master
