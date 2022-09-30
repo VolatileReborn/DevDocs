@@ -1,4 +1,4 @@
-# 数据库配置说明
+# Mysql Config
 
 * 项目使用mysql数据库, 运行在lyk的server:
 
@@ -24,5 +24,10 @@
 
 # Frontend
 
-* 仅存的问题是: Jenkins服务器太垃圾了, 每次cicd都会在npm build那里卡上两小时. 由于jenkins和前端项目都部署在jenkins的宿主机, 所以宿主机卡死会导致jenkins和前端都不能访问....
+* 已经完成CICD和容器集群配置, 仅存的问题是: Jenkins服务器太垃圾了, 每次cicd都会在npm build那里卡上两小时. 由于jenkins和前端项目都部署在jenkins的宿主机, 所以宿主机卡死会导致jenkins和前端都不能访问....
   * 所以千万不要随意push到master, 可以push到别的分支. 等到发布的那个版本再push到master
+
+# Backend
+
+* 已经完成CICD, 但没有配置集群. 因为要等到微服务做完后配置集群才有意义
+* 后端CICD比较快, 大概5min内就能出结果.
