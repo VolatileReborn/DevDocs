@@ -54,21 +54,23 @@
       prefer-ip-address: true
   ```
 
-  ### Test
 
-  #### Online
 
-  可以在公网上测试, 注意使用正确的url
+### Test
 
-  ![collect-test-online](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/collect-test-online.png)
-
-## Locally
+#### Locally
 
 本地调试请千万不要使用容器, 而是直接启动jar, 原因是使用容器启动时, 本地似乎总是绑定了8000端口(尽管我指定的`server.port=9000`), 而同样的项目我用idea启动确显示绑定到了9000. 并且, 以容器形式运行时, 尽管显示绑定到了8000, 可依然无法访问8000. 我debug了一天, 也不知道为什么.
 
 
 
-![collect-test-locally](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/collect-test-locally.png)
+![collect-test-locally](./assets/collect-test-locally.png)
+
+#### Online
+
+可以在公网上测试, 注意使用正确的url
+
+![collect-test-online](./assets/collect-test-online.png)
 
 ## eureka
 
@@ -86,13 +88,13 @@
 
 ### Test
 
-### Online
+#### Online
 
 访问http://124.222.135.47:8001/即可:
 
 ![eureka-test-online](./assets/eureka-test-online.png)
 
-## Locally
+#### Locally
 
 访问localhost8001
 
