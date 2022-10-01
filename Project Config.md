@@ -31,3 +31,69 @@
 
 * 已经完成CICD, 但没有配置集群. 因为要等到微服务做完后配置集群才有意义
 * 后端CICD比较快, 大概5min内就能出结果.
+
+## collect-service
+
+* collect-service监听**9000**端口, 映射到主机的**9000**端口
+
+* collect-service监听了eureka的8001端口. 注意, eureka目前和collect-service部署在同一台主机, 因此使用`localhost`
+
+  ```yaml
+  # collec-service的配置文件
+  server:
+    port: 8000
+  
+  #mybatis:
+  #  mapper-locations: classpath*:com
+  
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8001/eureka/
+    instance:
+      prefer-ip-address: true
+  ```
+
+  ### Test
+
+  #### Online
+
+  可以在公网上测试, 注意使用正确的url
+
+  ![image-20221001161032518](/Users/lyk/Desktop/collect-test-online.png)
+
+## Locally
+
+本地调试请千万不要使用容器, 而是直接启动jar, 原因是使用容器启动时, 本地似乎总是绑定了8000端口(尽管我指定的`server.port=9000`), 而同样的项目我用idea启动确显示绑定到了9000. 并且, 以容器形式运行时, 尽管显示绑定到了8000, 可依然无法访问8000. 我debug了一天, 也不知道为什么.
+
+
+
+![image-20221001173934747](/Users/lyk/Desktop/collect-test-locally.png)
+
+## eureka
+
+* eureka监听8001端口, 映射到主机的8001端口
+
+  ```
+  # eureka的配置文件
+  eureka.client.service-url.defaultZone=http://localhost:8001/eureka
+  eureka.client.register-with-eureka=false
+  eureka.client.fetch-registry=false
+  server.port=8001
+  ```
+
+  
+
+### Test
+
+### Online
+
+访问http://124.222.135.47:8001/即可:
+
+![image-20221001171338882](/Users/lyk/Desktop/eureka-test-online.png)
+
+## Locally
+
+访问localhost8001
+
+![image-20221001174037375](/Users/lyk/Desktop/eureka-test-localloy.png)
