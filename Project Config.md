@@ -99,3 +99,21 @@
 访问localhost8001
 
 <img src="./assets/eureka-test-locally.png" alt="eureka-test-locally" style="zoom:67%;" />
+
+
+
+
+
+# Accounts
+
+下面给出一些账号, 方面大家测试:
+
+* 管理员:
+  * phone_number: 12345678999
+  * password: 123
+* 工人:
+  * phone_number: 12345678800
+  * password: 123
+* 发包方:
+  * phone_number: 12345678801
+  * password: 123
