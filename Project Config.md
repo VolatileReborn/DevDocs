@@ -60,7 +60,7 @@
 
   可以在公网上测试, 注意使用正确的url
 
-  ![image-20221001161032518](/Users/lyk/Desktop/collect-test-online.png)
+  ![collect-test-online](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/collect-test-online.png)
 
 ## Locally
 
@@ -68,7 +68,7 @@
 
 
 
-![image-20221001173934747](/Users/lyk/Desktop/collect-test-locally.png)
+![collect-test-locally](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/collect-test-locally.png)
 
 ## eureka
 
@@ -90,10 +90,10 @@
 
 访问http://124.222.135.47:8001/即可:
 
-![image-20221001171338882](/Users/lyk/Desktop/eureka-test-online.png)
+![eureka-test-online](./assets/eureka-test-online.png)
 
 ## Locally
 
 访问localhost8001
 
-![image-20221001174037375](/Users/lyk/Desktop/eureka-test-localloy.png)
+<img src="./assets/eureka-test-locally.png" alt="eureka-test-locally" style="zoom:67%;" />
