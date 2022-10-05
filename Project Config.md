@@ -90,7 +90,7 @@
 
 #### Online
 
-访问http://124.222.135.47:8001/即可:
+访问:http://124.222.135.47:8001/
 
 ![eureka-test-online](./assets/eureka-test-online.png)
 
@@ -109,7 +109,7 @@
 下面给出一些账号, 方面大家测试:
 
 * 管理员:
-  * phone_number: 12345678999
+  * phone_number: 12345678900
   * password: 123
 * 工人:
   * phone_number: 12345678800
