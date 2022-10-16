@@ -111,8 +111,11 @@
 * 管理员:
   * phone_number: 12345678900
   * password: 123
-* 工人:
+* 工人1:
   * phone_number: 12345678800
+  * password: 123
+* 工人2:
+  * phone_number: 12345678432
   * password: 123
 * 发包方:
   * phone_number: 12345678801
