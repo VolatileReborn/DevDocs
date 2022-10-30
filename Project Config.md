@@ -31,6 +31,8 @@
 
 * 已经完成CICD, 但没有配置集群. 因为要等到微服务做完后配置集群才有意义
 * 后端CICD比较快, 大概5min内就能出结果.
+* 我添加了一个shell脚本`testLocally.sh`来进行简单的本地部署测试, 它的工作流是Jenkins的简化版,  会build jar包,build镜像然后在本地运行容器. 可以本地运行该脚本来进行测试
+  * 由于Zull和collect-service都将自身注册到Eureka, 因此无论是本地启动jar包, 还是本地启动容器, 都应该先启动Eureka,再启动其余服务
 
 ## collect-service
 
@@ -72,9 +74,9 @@
 
 ![collect-test-online](./assets/collect-test-online.png)
 
-## eureka
+## Eureka
 
-* eureka监听8001端口, 映射到主机的8001端口
+* Eureka监听**8001**端口, 映射到主机的**8001**端口
 
   ```
   # eureka的配置文件
@@ -88,21 +90,72 @@
 
 ### Test
 
+如果其他服务也**正常**启动并成功注册到Eureka, 那么可以在Eureka的网页上看到被注册的服务
+
 #### Online
 
 访问:http://124.222.135.47:8001/
 
 ![eureka-test-online](./assets/eureka-test-online.png)
 
+
+
 #### Locally
 
 访问localhost8001
 
-<img src="./assets/eureka-test-locally.png" alt="eureka-test-locally" style="zoom:67%;" />
+![eureka-test-locally](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/eureka-test-locally.png)
+
+
+
+## Zuul
+
+* Zuul监听**9999**端口, 映射到主机的**9999**端口(事实上我使用了Docker的host网络, 并没有进行任何端口映射, 直接就是9999)
+
+  ```yaml
+  # Zull的配置文件
+  server:
+    port: 9999
+  
+  spring:
+    application:
+      name: collect-gateway
+  
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8001/eureka/
+    instance:
+      prefer-ip-address: true
+  
+  zuul:
+    routes:
+      collect-service: /**
+  
+  hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 6000 # 熔断超时时长：6000ms
+  
+  ribbon:
+    ConnectTimeout: 500 # ribbon链接超时时长
+    ReadTimeout: 2000 # ribbon读取超时时长
+    MaxAutoRetries: 0  # 当前服务重试次数
+    MaxAutoRetriesNextServer: 1 # 切换服务重试次数
+    OkToRetryOnAllOperations: false # 是否对所有的请求方式都重试，只对get请求重试
+  ```
 
 
 
 
+### Test
+
+### Online
+
+### Locally
 
 # Accounts
 
