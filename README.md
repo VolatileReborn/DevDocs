@@ -6,6 +6,7 @@
   * week3-4: https://fehuegbry8.feishu.cn/docx/doxcnWf3G5dK3gsgF0quOpLHQKd
   * week5-6:https://fehuegbry8.feishu.cn/docx/doxcnNwoaBLRUM3IFHi7aFDlTrb
   * **week7-8**:https://fehuegbry8.feishu.cn/docx/doxcnWf3G5dK3gsgF0quOpLHQKd
+  * **week9-10**:https://fehuegbry8.feishu.cn/docx/doxcn0nEzJ0aPONHNewFH9M4V1u
 
 * 讲解视频链接:
 
@@ -16,6 +17,8 @@
   * week5-6: https://box.nju.edu.cn/f/a81246d7b3774418b658/
   
   * **week7-8**: https://box.nju.edu.cn/f/d0cc0f8365854ba3b782/
+  
+  * **week9-10**: https://box.nju.edu.cn/f/c1a0a1c72afc45b0a645/
   
     ****
   
