@@ -52,3 +52,5 @@
 - 后端项目: https://github.com/VolatileReborn/Backend-VolatileReborn
 - 集群配置: https://github.com/VolatileReborn/DevDocs/blob/master/Cluster%20Doc.md
 - CICD配置: https://github.com/VolatileReborn/DevDocs/blob/master/Deployment%20Doc.md
+- 服务配置, 用于项目开发: https://github.com/VolatileReborn/DevDocs/blob/master/Project%20Config.md
+
