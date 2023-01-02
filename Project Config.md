@@ -29,7 +29,6 @@
 
 # Backend
 
-* 已经完成CICD, 但没有配置集群. 因为要等到微服务做完后配置集群才有意义
 * 后端CICD比较快, 大概5min内就能出结果.
 * 我添加了一个shell脚本`testLocally.sh`来进行简单的本地部署测试, 它的工作流是Jenkins的简化版,  会build jar包,build镜像然后在本地运行容器. 可以本地运行该脚本来进行测试
   * 由于Zull和collect-service都将自身注册到Eureka, 因此无论是本地启动jar包, 还是本地启动容器, 都应该先启动Eureka,再启动其余服务
@@ -104,7 +103,7 @@
 
 访问localhost8001
 
-![eureka-test-locally](/Users/lyk/Projects/MyOfficialProjects/VolatileReborn/Docs-VolatileReborn/assets/eureka-test-locally.png)
+![eureka-test-locally](./assets/eureka-test-locally.png)
 
 
 
@@ -156,6 +155,23 @@
 ### Online
 
 ### Locally
+
+# Algorithm Server
+
+算法没有部署集群, 是单主机的
+
+## Test
+
+可以本地启动项目， 使用Apifox查看网络请求:
+![apifox_localhost](./assets/apifox_localhost.png)
+
+
+
+算法服务部署后, 可以使用Apifox在公网(`124.222.135.47:5001`)查看网络请求:
+
+![apifox_internet](./assets/apifox_internet.png)
+
+
 
 # Accounts
 
