@@ -16,7 +16,7 @@
 
 # 讲解视频链接
 
-* week1-2:
+* week1-2: https://box.nju.edu.cn/f/02cd338bbc814fefbec2/
 
 *  week3-4： https://box.nju.edu.cn/f/d4eb028e95ea4f20a38e/
 
@@ -28,9 +28,9 @@
 
 * week11-12: https://box.nju.edu.cn/f/c1a0a1c72afc45b0a645/
 
-* week13-14: 
+* week13-14: https://box.nju.edu.cn/f/5adc7c2ec34e4f31861d/
 
-* week15-16
+* week15-16: https://box.nju.edu.cn/f/d0db5e1c53a7464ebd28/
 
   ****
 

@@ -27,7 +27,39 @@
 * 已经完成CICD和容器集群配置, 仅存的问题是: Jenkins服务器太垃圾了, 每次cicd都会在npm build那里卡上两小时. 由于jenkins和前端项目都部署在jenkins的宿主机, 所以宿主机卡死会导致jenkins和前端都不能访问....
   * 所以千万不要随意push到master, 可以push到别的分支. 等到发布的那个版本再push到master
 
+## Test
+
+有时需要本地启动后端来debug, 此时需要更改前端 `config/index.js`的配置文件, 使其路由到本地的后端(而不是公网的):
+
+```javascript
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
+  devServer: {
+    port:3001,
+    proxy: {
+      '^/api': {
+          // target: "http://124.222.135.47:9000", // 代理地址，这里设置的地址会代替axios中设置的baseURL
+          target:"http://localhost:9000",
+          ws:true, // websocket
+          changeOrigin: true, // 开启跨域
+          pathRewrite: {
+            '^/api': '/api' // 重写后url为  http://124.222.135.47/api/xxxx
+          }
+      }
+    }
+
+  }
+})
+```
+
+
+
+
+
 # Backend
+
+后端不知道为啥(可能是卡), 有时数据库不会反回工人看到的任务列表
 
 * 后端CICD比较快, 大概5min内就能出结果.
 * 我添加了一个shell脚本`testLocally.sh`来进行简单的本地部署测试, 它的工作流是Jenkins的简化版,  会build jar包,build镜像然后在本地运行容器. 可以本地运行该脚本来进行测试
@@ -185,6 +217,9 @@
   * password: 123
 * 工人2:
   * phone_number: 12345678432
+  * password: 123
+* 工人3(lyk):
+  * phone_number: 12345678810
   * password: 123
 * 发包方:
   * phone_number: 12345678801

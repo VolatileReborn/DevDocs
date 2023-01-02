@@ -6,6 +6,8 @@
 * 后端构建一次大概五六分钟, 但也有卡死的可能....
 * 算法端也是一构建就卡死
 
+# 
+
 # Jenkins
 
 * Jenkins以容器形式部署
@@ -17,6 +19,12 @@
 * 用户名： lyk
 
 * 密码： 123456
+
+## Projects
+
+前端, 后端, 算法端三个项目:
+
+![Jenkins Projects](./assets/Jenkins Projects.png)
 
 ## Execution Logic
 
